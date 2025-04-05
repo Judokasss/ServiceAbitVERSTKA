@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AbitService</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="assets/icon/logo.png"
+        alt="icon"
+        class="header-icon"
+      />
+      <h1 class="header-title">Югорский государственный университет</h1>
+    </header>
+
+    <div class="info-box">
+      <div class="id">
+        <h1 class="FIO">Горн Денис Алексеевич</h1>
+        <p class="number">+79002161568</p>
+      </div>
+      <div class="direction">
+        <a href="#" class="other-direction">Информационная безопасность</a
+        ><br />
+        <a href="#" class="other-direction">Программная инженерия</a><br />
+        <div class="main-direction">
+          <p class="current">Информатика и вычислительная техника</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-section">
+          <strong>Баллы</strong>
+          <p>Русский язык: 89</p>
+          <p>Проф. математика: 98</p>
+          <p>Информатика: 91</p>
+          <p>Кол-во баллов: 278</p>
+        </div>
+        <div class="info-section">
+          <strong>Индивидуальные достижения</strong>
+          <p>Портфолио: 10</p>
+        </div>
+        <div class="info-section">
+          <strong>Статус</strong>
+          <p>Зачислен по другому направлению</p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-section">
+          <strong>Рекомендация</strong>
+          <p>РФ</p>
+        </div>
+        <div class="info-section">
+          <strong>Подлинник аттестата</strong>
+          <p>Есть</p>
+        </div>
+        <div class="info-section">
+          <strong>Высший приоритет</strong>
+          <p>Да</p>
+        </div>
+        <div class="info-section">
+          <strong>Льгота</strong>
+          <p>-</p>
+        </div>
+        <div class="info-section">
+          <strong>Целевое</strong>
+          <p>-</p>
+        </div>
+      </div>
+      <div class="pinned-counter">
+        <span class="underline">Особые отметки:</span>
+        <span class="counter" id="pinnedCount"></span>
+      </div>
+    </div>
+
+    
+
+    <div class="info-box-notes">
+      <h2 class="notes-title">История звонков и комментариев</h2>
+      <div class="actions-container">
+        <div class="action-item" onclick="toggleContent('calls')">
+          <div class="action-header">
+            <div class="action-content">
+              <span class="call-title">Звонки</span>
+              <img src="assets/icon/phone.png" alt="phone" class="check-icon"/>
+            </div>
+            <span class="triangle">▼</span>
+          </div>
+
+          <div class="expandable-content" id="callsContent">
+            <div class="content-wrapper">
+              <!-- Пример звонка -->
+              <div class="call-entry">
+                <div class="call-meta">
+                  <span class="call-date">26.03.2025 14:10 
+                    <button class="button-fix">
+                      <img src="assets/icon/icons8-pin-50 (1).png" alt="icon" class="fix"/>
+                    </button> 
+                  </span>
+                  <span class="call-type outgoing">Исходящий<img src="assets/icon/исхзвонок.png" alt="icon" class="call-icon"/></span>
+                </div>
+                <div class="call-info">
+                  <span class="call-number">+7 (3467) 377-000</span>
+                  <span class="call-name">Иванов Пётр</span>
+                  <span class="call-status accepted">Принят (2:15)</span>
+                </div>
+                <!-- кнопка  -->
+                <button
+                  class="comment-btn"
+                  onclick="handleComment('add', this)"
+                >
+                  Добавить комментарий
+                  <img
+                    src="assets/icon/icon-edit.png"
+                    alt="icon"
+                    class="comment-icon"
+                  />
+                </button>
+              </div>
+
+              <!-- Еще один пример -->
+              <div class="call-entry">
+                <div class="call-meta">
+                  <span class="call-date">26.03.2025 15:33
+                    <button class="button-fix">
+                      <img src="assets/icon/icons8-pin-50 (1).png" alt="icon" class="fix"/>
+                    </button> 
+                  </span>
+                  <span class="call-type incoming"
+                    >Входящий
+                    <img
+                      src="assets/icon/входящийзвонок.png"
+                      alt="icon"
+                      class="call-icon"
+                    />
+                  </span>
+                </div>
+                <div class="call-info">
+                  <span class="call-number">+7 (3467) 377-000</span>
+                  <span class="call-name">Смирнова Ольга</span>
+                  <span class="call-status missed">Пропущен</span>
+                </div>
+                <div class="comment-section">
+                  <span class="existing-comment">26.03.2025 16:10 - Пропустили звонок, нужноперезвонить.</span>
+                  <button
+                    class="comment-btn edit"
+                    onclick="handleComment('edit', this)"
+                  >
+                    Дополнить
+                    <img
+                      src="assets/icon/icon-edit.png"
+                      alt="icon"
+                      class="comment-icon"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <!-- Еще пример -->
+              <div class="call-entry">
+                <div class="call-meta">
+                  <span class="call-date">26.03.2025 15:33
+                    <button class="button-fix">
+                      <img src="assets/icon/icons8-pin-50 (1).png" alt="icon" class="fix"/>
+                    </button> 
+                  </span>
+                  <span class="call-type outgoing"
+                    >Исходящий
+                    <img
+                      src="assets/icon/исхзвонок.png"
+                      alt="icon"
+                      class="call-icon"
+                  /></span>
+                </div>
+                <div class="call-info">
+                  <span class="call-number">+7 (3467) 377-000</span>
+                  <span class="call-name">Бремов Алексей</span>
+                  <span class="call-status missed1">Не ответил</span>
+                </div>
+                <button
+                  class="comment-btn"
+                  onclick="handleComment('edit', this)"
+                >
+                  Добавить комментарий<img
+                    src="assets/icon/icon-edit.png"
+                    alt="icon"
+                    class="comment-icon"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-item" onclick="toggleContent('comments')">
+          <div class="action-header">
+            <div class="action-content">
+              <span class="comm-title">Комментарии</span>
+              <img
+                src="assets/icon/envelope.png"
+                alt="comment"
+                class="check-icon"
+              />
+            </div>
+            <span class="triangle">▼</span>
+          </div>
+          <div class="expandable-content" id="commentsContent">
+            <!-- В разделе комментариев замените текущий content-wrapper -->
+            <div class="content-wrapper">
+              <!-- Пример комментария -->
+              <div class="comment-entry">
+                <div class="comment-meta">
+                  <div class="meta-row">
+                    <span class="comment-date">14.08.2023 14:10
+                      <button class="button-fix">
+                        <img src="assets/icon/icons8-pin-50 (1).png" alt="icon" class="fix"/>
+                      </button> 
+                    </span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="comment-added"
+                      >Добавлено: Иванов Пётр Иванович</span
+                    >
+                  </div>
+                </div>
+                <h2 class="descriptionComm">Описание комментария</h2>
+                <div class="comment-content">
+                  <p class="comment-text">
+                    Требуется дополнительная справка
+                    <span class="comment-more">Читать дальше...</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Еще комментарии -->
+              <div class="comment-entry">
+                <div class="comment-meta">
+                  <div class="meta-row">
+                    <span class="comment-date">14.08.2023 14:10
+                      <button class="button-fix">
+                        <img src="assets/icon/icons8-pin-50 (1).png" alt="icon" class="fix"/>
+                      </button> 
+                    </span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="comment-added"
+                      >Добавлено: Иванов Пётр Иванович</span
+                    >
+                  </div>
+                </div>
+                <h2 class="descriptionComm">Описание комментария</h2>
+                <div class="comment-content">
+                  <p class="comment-text">
+                    Это длинный комментарий, который скрывается. Можно раскрыть и прочитать дальше...
+                    <span class="comment-more">Читать дальше...</span>
+                  </p>
+                </div>
+              </div>
+              <!-- В блоке content-wrapper после комментариев -->
+              <div class="btn-container">
+               <button class="simple-btn">Добавить комментарий</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js" defer></script>
+  </body>
+</html>

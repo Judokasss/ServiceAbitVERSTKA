@@ -1,0 +1,577 @@
+/* Общие стили */
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  overflow-x: hidden; /* Убираем горизонтальную полосу прокрутки */
+  background-color: #eff4fb;
+}
+
+/* Стили для шапки */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.392);
+}
+
+.header-icon {
+  width: 40px;
+  height: 55px;
+  margin-right: 10px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Контейнер с информацией */
+.info-box {
+  border: 2px solid #2c3e50;
+  border-radius: 10px;
+  padding: 15px;
+  background: #ffffff;
+  margin: 20px;
+  font-size: 14px;
+}
+
+/* Ряд элементов (адаптивный) */
+.info-row {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+  justify-content: space-between;
+  gap: 15px; /* Расстояние между элементами */
+  padding: 10px 0;
+}
+
+/* Последний ряд без границы */
+.info-row:last-child {
+  border-bottom: none;
+}
+
+/* Блок для каждой секции
+.info-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+  background: #2262a2;
+  border-radius: 8px;
+  border: 1px solid #bdc3c7;
+}
+
+.info-section strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+} */
+
+/* Заголовки */
+.title-abit {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.FIO {
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic; /* Делаем текст наклонным */
+}
+
+.number {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.id {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали */
+  text-align: center;
+  width: 100%; /* Чтобы занимал всю ширину родителя */
+  padding: 10px;
+}
+
+.direction {
+  text-align: right; /* Выравниваем текст внутри блока направлений */
+}
+
+.current {
+  font-weight: bold;
+  font-style: italic;
+  color: #27ae60;
+}
+
+.other-direction {
+  color: #2980b9;
+  text-decoration: none; /* Убирает подчеркивание */
+  font-style: italic;
+  font-weight: bold;
+}
+
+.other-direction:hover {
+  background: #ecf5fb;
+  text-decoration: underline;
+}
+
+.main-title {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Контейнер с информацией */
+.info-box-notes {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 15px;
+  background: #f9f9f9;
+  margin: 20px;
+  font-size: 14px;
+}
+
+/* Информационные секции */
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+.info-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+  background: rgba(216, 216, 216, 0.263);
+  border-radius: 8px;
+  border: 1px solid #bdc3c7;
+}
+
+.info-section strong {
+  display: block;
+  color: #34495e;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Блок заметок */
+.info-box-notes {
+  border: 2px solid #2c3e50;
+  border-radius: 12px;
+  padding: 25px;
+  background: #fff;
+  margin: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.notes-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic; /* Делаем текст наклонным */
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.action-item {
+  /* cursor: pointer; */
+  padding: 15px 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.action-item:hover {
+  background: rgba(88, 168, 248, 0.175);
+  transform: translateY(-2px);
+}
+
+.action-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Равномерное распределение */
+  width: 100%;
+  padding: 5px 0; /* Добавляем отступы если нужно */
+}
+
+.check-icon {
+  color: #27ae60;
+  font-size: 1.2em;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-top: 15px;
+}
+
+.content-wrapper {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #000000;
+}
+
+.check-icon {
+  height: 20px;
+  width: 20px;
+}
+
+/* .action-item:hover img {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.action-item img {
+  transition: all 0.3s ease;
+} */
+
+.call-title,
+.comm-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic; /* Делаем текст наклонным */
+}
+
+.action-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1; /* Занимает все доступное пространство */
+}
+
+.triangle {
+  margin-left: 15px; /* Фиксированный отступ вместо auto */
+  transition: transform 0.3s;
+  font-size: 14px;
+  color: #7f8c8d;
+  display: inline-block; /* Для корректного вращения */
+  transform-origin: center; /* Вращение вокруг центра */
+  cursor: pointer;
+}
+
+.action-item.active .triangle {
+  transform: rotate(180deg);
+}
+
+/* Исправление путей (опционально) */
+.check-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.triangle,
+.check-icon,
+.comm-title,
+.call-title {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 20px;
+  }
+
+  .info-box,
+  .info-box-notes {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .FIO {
+    font-size: 22px;
+  }
+
+  .info-section {
+    flex: 100%;
+  }
+}
+
+/* Стили для записей звонков */
+.call-entry {
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  /* border-bottom: 1px solid #2740bda7; */
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.call-entry:last-child {
+  border-bottom: none;
+}
+
+.call-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.call-type {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.call-type.incoming {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.call-type.outgoing {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.call-info {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.call-number {
+  font-weight: bold;
+  color: #333;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.call-name {
+  color: #666;
+  font-size: 16px;
+}
+
+.call-date {
+  font-size: 16px;
+}
+
+.comment-date {
+  font-size: 16px;
+  color: #666;
+}
+.call-status {
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.call-status.accepted {
+  color: #4caf50;
+}
+
+.call-status.missed {
+  color: #f44336;
+}
+
+.call-status.missed1 {
+  color: #ffad0a;
+}
+
+.comment-section {
+  border: 1px solid #3e3e3e69;
+  background: #fff9e6;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+  position: relative;
+}
+
+.existing-comment {
+  white-space: pre-wrap; /* Сохраняет переносы строк */
+  word-break: break-word;
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.comment-btn {
+  background: none;
+  border: 1px solid #2196f3;
+  color: #2196f3;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s;
+}
+
+.comment-btn:hover {
+  background: #2196f3;
+  color: white;
+}
+
+.comment-btn.edit {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.comment-btn.edit:hover {
+  background: #ff9800;
+  color: white;
+}
+
+.call-icon {
+  height: 16px;
+  width: 16px;
+}
+.comment-icon {
+  height: 16px;
+  width: 16px;
+  margin-left: 5px;
+}
+/* Стили для комментариев */
+.comment-entry {
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: white;
+}
+
+.comment-meta {
+  display: flex;
+  flex-direction: column; /* Элементы в колонку */
+  gap: 4px; /* Отступ между строками */
+}
+
+.comment-added {
+  color: #2b2b2b;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+}
+
+.comment-author {
+  color: #666;
+  font-size: 14px;
+}
+
+.comment-text {
+  position: relative;
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 0;
+}
+
+.comment-more {
+  color: #2196f3;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.comment-full {
+  padding-top: 10px;
+  color: #555;
+  border-top: 1px dashed #ddd;
+  margin-top: 10px;
+  display: none;
+}
+
+.comment-content.expanded .comment-full {
+  display: block;
+}
+
+.comment-content.expanded .comment-more {
+  display: none;
+}
+.descriptionComm {
+  font-size: 18px;
+  font-weight: bold;
+  color: #141414;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-style: italic;
+}
+.btn-container {
+  display: flex;
+  justify-content: center; /* Центрирует кнопку по горизонтали */
+  margin-top: 20px; /* Добавляет отступ сверху */
+}
+
+.simple-btn {
+  background-color: #2262a2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.simple-btn:hover {
+  background-color: #1a4f84;
+}
+
+.fix {
+  height: 18px;
+  width: 18px;
+  margin-left: 5px;
+}
+
+.button-fix {
+  border: none;
+  background: none; /* Убирает фон */
+  cursor: pointer;
+}
+
+.pinned-counter {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  font-style: italic;
+  color: #000000;
+}
+
+.counter{
+  color: rgba(218, 45, 45, 0.84);
+}
+
+.underline{
+  text-decoration: underline;
+}
